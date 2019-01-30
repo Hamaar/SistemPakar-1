@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_dasboard_1"
+        android:title="@string/daftar_gejala"
+        android:icon="@drawable/ic_admin"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/nav_dasboard_2"
+        android:title="@string/daftar_penyakit"
+        android:icon="@drawable/ic_admin"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/nav_solusi"
+        android:title="@string/solusi"
+        android:icon="@drawable/ic_admin"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/nav_dasboard_3"
+        android:title="@string/keputusan"
+        android:icon="@drawable/ic_admin"
+        app:showAsAction="never" />
+
+
+
+
+
+</menu>
