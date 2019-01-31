@@ -28,6 +28,9 @@ public class FlashScreen extends AppCompatActivity {
             SQLiteHelper.getInstance(this).addPenyakit(new Penyakit("P05", "Penyakit Egg Binding", "kasih sangkar luas"));
             SQLiteHelper.getInstance(this).addPenyakit(new Penyakit("P06", "Penyakit Bulu", "mandikan dengan shampo"));
             SQLiteHelper.getInstance(this).addPenyakit(new Penyakit("P07", "Penyakit Ganguan Pernafasan", "mata"));
+            SQLiteHelper.getInstance(this).addPenyakit(new Penyakit("P08", "Bubul", "mata"));
+            SQLiteHelper.getInstance(this).addPenyakit(new Penyakit("P09", "Data Tidak Ditemukan", "Error Data"));
+
 
 
             //table gejala
@@ -56,6 +59,8 @@ public class FlashScreen extends AppCompatActivity {
             SQLiteHelper.getInstance(this).addKeputusan(new Keputusan("P06", "G9, G10"));
             SQLiteHelper.getInstance(this).addKeputusan(new Keputusan("P07", "G3, G11, G14"));
             SQLiteHelper.getInstance(this).addKeputusan(new Keputusan("P08", "G10, G12"));
+
+
 
             SessionHelper.getInstance(this).setAppFirstTime(false);
         }
