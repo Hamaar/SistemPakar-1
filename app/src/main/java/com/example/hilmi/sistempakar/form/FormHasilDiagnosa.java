@@ -105,30 +105,6 @@ public class FormHasilDiagnosa extends AppCompatActivity {
     }
 
 
-
-    private void chainProcess() {
-
-        for (String code : results) {
-            for (Keputusan keputusan : SQLiteHelper.getInstance(this).getAllKeputusan()) {
-                if (keputusan.getGid().contains(code + ",")) {
-                    if (chains.containsKey(keputusan.getPid())) {
-                        chains.get(keputusan.getPid()).add(code);
-                    } else {
-                        ArrayList<String> str = new ArrayList<>();
-                        str.add(keputusan.getGid().split(",").length + "");
-                        str.add(code);
-                        chains.put(keputusan.getPid(), str);
-
-                    }
-                }
-            }
-        }
-    }
-
-
-
-
-
     private void setupData() {
         Set<String> keySet = chains.keySet();
         float top = -1;
@@ -140,9 +116,15 @@ public class FormHasilDiagnosa extends AppCompatActivity {
 
             float current = ma / ms;
             if (current >= top) {
-                top = current;
+               top = current;
                 keyset = key;
             }
+
+
+        }
+
+        if(keyset==""){
+            keyset="P09";
         }
 
         Penyakit sqlpenyakit = SQLiteHelper.getInstance(this).getPenyakit(keyset);
@@ -151,14 +133,11 @@ public class FormHasilDiagnosa extends AppCompatActivity {
         System.out.println(sqlpenyakit.getCara());
 
         //jika data tidak termasuk di rule
-        if (sqlpenyakit == null ){
-            Intent intent = new Intent();
-            intent.getStringExtra("ERROR");
-            tvResultPenyakit.setText("Data tidak ditemukan");
-            startActivity(intent);
-        }
-        //hasil output
-        tvResultPenyakit.setText(sqlpenyakit.getNama().toString());
-        tvResultSolusi.setText(sqlpenyakit.getCara().toString());
+
+            //hasil output
+            tvResultPenyakit.setText(sqlpenyakit.getNama());
+            tvResultSolusi.setText(sqlpenyakit.getCara());
+
+
     }
 }

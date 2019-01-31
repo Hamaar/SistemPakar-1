@@ -82,6 +82,8 @@ public class DbHelper extends SQLiteOpenHelper {
         dbPenyakit.execSQL("INSERT INTO tbl_penyakit VALUES ('P5', 'Penyakit Egg Binding', 'mata');");
         dbPenyakit.execSQL("INSERT INTO tbl_penyakit VALUES ('P6', 'Penyakit Bulu', 'mata');");
         dbPenyakit.execSQL("INSERT INTO tbl_penyakit VALUES ('P7', 'Penyakit Ganguan Pernafasan', 'mata');");
+        dbPenyakit.execSQL("INSERT INTO tbl_penyakit VALUES ('P8', 'Bubul', 'mata');");
+        dbPenyakit.execSQL("INSERT INTO tbl_penyakit VALUES ('P9', 'Data Tidak ditemukan', 'error');");
 
     }
 
